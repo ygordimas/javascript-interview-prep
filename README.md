@@ -269,3 +269,69 @@ const getArrayOfNames = (arr) => {
   return arrayOfNames
 }
 ```
+
+# Functions
+
+## Function declarations vs. function expressions vs. arrow functions
+Function declarations are defined by using the function keyword. When the function declaration has no name attached to it, it is known as an anonymous function.
+```javascript
+function declaration() {
+	//do something
+}
+
+function() {
+	//anonymous function
+}
+```
+Function declarations can be used as an Immediately Invoked Function Expression (IIFE), also known as Self-Executing Anonymous Function.
+Encapsulation is one of the main benefits of IIFEs. The enclosed lexical scope ensures that variables inside the function block aren´t visible to the global scope, avoiding conflicts. 
+```javascript
+(function() { 
+	//enclosed scope
+})() //immediately invoked function expression
+```
+Function expressions are defined through a variable assingment.
+```javascript
+var functionExpression = function() {}
+let functionExpression = function() {}
+const functionExpression = function() {}
+
+//var declarations are hoisted to the top of the block scope of where they are declared but the function assignment is not
+//trying to invoke it before its assignment will throw a typeerror
+
+functionExpression(); // "TypeError: functionExpression() is not a function"
+var functionExpression = function functionDeclaration() {}
+```
+The most important difference in behaviour between function declarations and expressions is that function declarations are hoisted along with their assignments to the top of the block where they were declared. Function expressions are hoisted without their assignments, making it infeasible to call them before they are assigned.
+
+Arrow functions are defined through a more concise syntax of function expressions.
+```javascript
+const arrowFunction = () => {}
+const arrowFunction = singleParameter => {}
+const arrowFunction = (param1, param2) => {}
+```
+
+The main aspect of arrow functions is the way it handles the scoping of the *this* keyword. Regular function declarations will handle _this_ by assigning it to the block scope of where the function is *called*. Arrow functions are difference because they assign the scope of the _this_ keyword to where the function is *declared*, as seen in the example below:
+```javascript
+class Cat {
+	constructor(name) {
+		this.name = name
+	}
+
+	printNameArrow() {
+		setTimeOut(() => {
+			console.log(this.name)
+		}, 100)
+	}
+
+	printNameFunction() {
+		setTimeOut(() => {
+			console.log(this.name)
+		}, 100)
+	}
+}
+
+let pet = new Cat('Furryball')
+pet.printNameArrow() //prints Furryball. printNameArrow() declaration is part of the Cat class scope, which contains a reference to a name variable.
+pet.printNameFunction() //will print nothing. A function declaration scope for this is defined by where the function is called, and in this case, the global object has no declaration for a name variable
+```
