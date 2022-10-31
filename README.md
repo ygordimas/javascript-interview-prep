@@ -332,6 +332,8 @@ class Cat {
 }
 
 let pet = new Cat('Furryball')
-pet.printNameArrow() //prints Furryball. printNameArrow() declaration is part of the Cat class scope, which contains a reference to a name variable.
-pet.printNameFunction() //will print nothing. A function declaration scope for this is defined by where the function is called, and in this case, the global object has no declaration for a name variable
+pet.printNameArrow() 
+//prints Furryball. printNameArrow() declaration is part of the Cat class scope, which contains a reference to a _name_ variable.
+pet.printNameFunction() 
+//prints nothing. A function declaration scope for _this_ is defined by where the function is called, and in this case, the global object has no declaration for a _name_ variable
 ```
