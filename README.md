@@ -1,6 +1,26 @@
 # Topics
 ### Arrays
 * [Describing an Array](https://github.com/ygordimas/javascript-interview-prep#describing-an-array-from-the-javascript-perspective)
+* [What are array literals?](https://github.com/ygordimas/javascript-interview-prep#what-are-array-literals)
+* [What is the data type of an array?](https://github.com/ygordimas/javascript-interview-prep#what-is-the-data-type-of-an-array-in-javascript)
+* [What is an array-like object?](https://github.com/ygordimas/javascript-interview-prep#what-is-an-array-like-object)
+* [Which array operations can be done on an array-like object?](https://github.com/ygordimas/javascript-interview-prep#which-array-operations-can-be-done-on-an-array-like-object)
+* [Array indexes](https://github.com/ygordimas/javascript-interview-prep#indexes)
+* [How to find the size of an array?](https://github.com/ygordimas/javascript-interview-prep#how-to-find-the-size-of-an-array)
+* [How to create an array of a given size?](https://github.com/ygordimas/javascript-interview-prep#how-to-create-an-array-of-a-given-size)
+* [Dinamic sized vs. Static sized](https://github.com/ygordimas/javascript-interview-prep#is-the-array-in-javascript-static-sized-or-dynamic-sized)
+* [What happens when 'length' is reduced?](https://github.com/ygordimas/javascript-interview-prep#what-happens-when-length-is-reduced)
+* [What happens when 'length' is increased?](https://github.com/ygordimas/javascript-interview-prep#what-will-happen-when-length-is-increased)
+* [Sparse vs. Dense arrays](https://github.com/ygordimas/javascript-interview-prep#sparse-vs-dense-arrays)
+* [How to detect a sparse array](https://github.com/ygordimas/javascript-interview-prep#how-to-detect-a-sparse-array)
+* [How is a sparse array formed?](https://github.com/ygordimas/javascript-interview-prep#how-is-a-sparse-array-formed)
+* [Describe the looping behaviour of a sparse array](https://github.com/ygordimas/javascript-interview-prep#describe-the-looping-behavior-of-a-sparse-array)
+* [Converting a sparse array into a dense array](https://github.com/ygordimas/javascript-interview-prep#convert-a-sparse-array-into-a-dense-array)
+* [Which methods of Array.prototype accepts negative indexes?](https://github.com/ygordimas/javascript-interview-prep#which-methods-of-arrayprototype-accepts-negative-indexes)
+* [How can you do a deep-level flat operation on a given array?](https://github.com/ygordimas/javascript-interview-prep#how-can-you-do-a-deep-level-flat-operation-on-a-given-array)
+* [How to get an array of names from a given array of user objects?](https://github.com/ygordimas/javascript-interview-prep#how-to-get-an-array-of-names-from-a-given-array-of-user-objects)
+* [How to get an array of names of ONLY ACTIVE USERS from a given array of user objects?](https://github.com/ygordimas/javascript-interview-prep#how-to-get-an-array-of-names-of-only-active-users-from-a-given-array-of-user-objects)
+* [How to get an array of names of ONLY ACTIVE USERS from a given array of user objects, sorted by age (descending)?](https://github.com/ygordimas/javascript-interview-prep#how-to-get-an-array-of-names-of-only-active-users-from-a-given-array-of-user-objects-sorted-by-age-descending)
 
 
 # Arrays
@@ -46,7 +66,7 @@ const newArray = Array.from(arrayLike)
 ## Which array operations can be done on an Array-Like object?
 Iterations with *for* loops and numbered indices.
 
-## Indexes
+## Array Indexes
 Array elements can be accessed by their indexes. 
 Positive indexes will go from 0 until the value of it’s length minus 1. Negative indexes start from the last element of the array with a -1 value, adding -1 to each index (second to last will have an index of -2, and the first element of the array will have a negative index with the value of it’s length).
 
