@@ -1,5 +1,7 @@
-# javascript-interview-prep
-Study notes on various JavaScript topics.
+# Topics
+### Arrays
+* [Describing an Array](https://github.com/ygordimas/javascript-interview-prep#describing-an-array-from-the-javascript-perspective)
+
 
 # Arrays
 
@@ -8,11 +10,11 @@ An array is an instance of the Array object that inherits methods from Array.pro
 
 ## What are array literals?
 An array literal is a notation for directly declaring arrays by initializing them with one or more declarations of its elements' values surrounded by square brackets.
-```
+```javascript
 const arrayLiteral = ['element1', 'element2', 'element3']
 ```
 It is not much different from declaring a new array through the *new Array()* method, from which you are able to pass a parameter that will alocate a specific amount of memory space in the newly created array, but with no actual values attached to it.
-```
+```javascript
 const newArray = new Array(3)
 ```
 From this example, *newArray.length* will return a value of 3, while newArray[0] will return *undefined*.
@@ -31,12 +33,12 @@ In JavaScript, an object consists of a mapping between keys and values that can 
 The ‘arguments’ parameter of a function is an array-like object.
 It is possible to directly convert an array-like into an array.
 
-```
+```javascript
 //using the spread operator
 [...arrayLike]
 ```
 
-```
+```javascript
 //using Array.from()
 const newArray = Array.from(arrayLike)
 ```
@@ -52,7 +54,7 @@ Positive indexes will go from 0 until the value of it’s length minus 1. Negati
 Through the method found on Array.prototype.length 
 
 ## How to create an array of a given size?
-```
+```javascript
 const newArray = new Array(size)
 ```
 
@@ -74,7 +76,7 @@ A sparse array’s set of defined elements is not garanteed to start at index 0 
 You can detect a sparse array by checking if the length of the array is greater than the amount of elements.
 To check for sparse arrays, verify that there are no falsy values:
 
-```
+```javascript
 let array = [,,,,,,]
 
 //declare a condition for running on truthy values only
@@ -96,22 +98,22 @@ return count !== arr.length ? true : false
 ## How is a sparse array formed?
 There are a few different ways a sparse array can come into fruition:
 
-```
+```javascript
 //using the Array object
 let array = new Array(3);
 ```
-```
+```javascript
 //inserting a key/value at a certain index
 //length will be 1000
 array[999] = 0;
 ```
-```
+```javascript
 //using the delete operator
 //will result in [, 6, 9, 12, 15] and a length of 5
 let array = [3, 6, 9, 12, 15]
 delete array[0]
 ```
-```
+```javascript
 //initializing an array with holes in it
 let falsyArray = [,,,,,,]
 let mistypedArray = [3, 6,, 12]
@@ -132,7 +134,7 @@ You can convert by filling all of the vacant spots with an ‘undefined’ value
 - Array.prototype.splice()
 
 ## How can you do a deep-level flat operation on a given array?
-```
+```javascript
 const arr = [3, 6, [9, 12], 15, [18, 21, [24, 27, [30]], 33], 36, 39]
 
 const flatten = (arr) = {
@@ -161,7 +163,7 @@ const flatten = (arr) = {
 ```
 
 ## How to get an array of names from a given array of user objects?
-```
+```javascript
 const users = [{
     id: 1,
     name: 'Peter',
@@ -190,7 +192,7 @@ const getArrayOfNames = (arr) => {
 ```
 
 ## How to get an array of names of ONLY ACTIVE USERS from a given array of user objects?
-```
+```javascript
 const users = [{
     id: 1,
     name: 'Peter',
@@ -218,7 +220,7 @@ const getArrayOfNames = (arr) => {
 ```
 
 ## How to get an array of names of ONLY ACTIVE USERS from a given array of user objects, sorted by age (descending)?
-```
+```javascript
 const users = [{
     id: 1,
     name: 'Peter',
